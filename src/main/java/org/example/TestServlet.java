@@ -50,10 +50,11 @@ public class TestServlet extends HttpServlet {
     }
 
     @Override
-    public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-        HttpServletRequestWrapper wrapper = new RequestWrapper((HttpServletRequest) req);
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpServletRequestWrapper wrapper = new RequestWrapper(req);
         ConsoleRequestLogger logger = new ConsoleRequestLogger(wrapper);
         logger.print();
-        super.service(wrapper, res);
+
+        super.service(req, resp);
     }
 }
