@@ -11,10 +11,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.example.wrappers.RequestWrapper;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/")
 public class TestServlet extends HttpServlet {
 
     @Override
@@ -47,14 +47,5 @@ public class TestServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
         writer.write("DELETE");
         writer.close();
-    }
-
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpServletRequestWrapper wrapper = new RequestWrapper(req);
-        ConsoleRequestLogger logger = new ConsoleRequestLogger(wrapper);
-        logger.print();
-
-        super.service(req, resp);
     }
 }
