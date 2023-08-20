@@ -17,7 +17,7 @@
 
     <filter>
         <filter-name>WrapperFilter</filter-name>
-        <filter-class>org.example.WrapperFilter</filter-class>
+        <filter-class>org.example.filters.WrapperFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>WrapperFilter</filter-name>
@@ -26,7 +26,7 @@
 
     <filter>
         <filter-name>LoggerFilter</filter-name>
-        <filter-class>org.example.LoggerFilter</filter-class>
+        <filter-class>org.example.filters.LoggerFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>LoggerFilter</filter-name>
